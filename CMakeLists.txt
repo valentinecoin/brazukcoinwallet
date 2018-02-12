@@ -206,9 +206,9 @@ elseif (UNIX)
     file(GLOB_RECURSE OBJC_SOURCES src/*.mm)
     set(SOURCES ${SOURCES} ${OBJC_SOURCES})
     set(PLATFORM_DIR OSX)
-    set(MACOSX_BUNDLE_INFO_STRING "Brazukcoin GUI wallet")
+    set(MACOSX_BUNDLE_INFO_STRING "Valentinecoin GUI wallet")
     set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
-    set(MACOSX_BUNDLE_BUNDLE_NAME "Карбованець")
+    set(MACOSX_BUNDLE_BUNDLE_NAME "Valentinecoin")
     set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
     set(MACOSX_BUNDLE_BUNDLE_VERSION "$${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
 
@@ -220,8 +220,8 @@ elseif (UNIX)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 -maes -D_DARWIN_C_SOURCE")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework CoreFoundation -framework Carbon -framework IOKit -L/usr/lib")
 
-    set(MACOSX_BUNDLE_ICON_FILE brazukcoin.icns)
-    set(APPLICATION_ICON src/images/brazukcoin.icns)
+    set(MACOSX_BUNDLE_ICON_FILE valentinecoin.icns)
+    set(APPLICATION_ICON src/images/valentinecoin.icns)
     set_source_files_properties(${APPLICATION_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
 
     set(BUILD_PLATFORM MACOSX_BUNDLE)
@@ -268,8 +268,8 @@ qt5_use_modules(${PROJECT_NAME} Widgets Gui Network)
 
 set(CPACK_PACKAGE_NAME ${CN_PROJECT_NAME})
 set(CPACK_PACKAGE_VERSION ${CN_VERSION})
-set(CPACK_PACKAGE_VENDOR "Brazukcoin-project")
-set(CPACK_PACKAGE_CONTACT "http://brazukcoin.com")
+set(CPACK_PACKAGE_VENDOR "valentinecoin-project")
+set(CPACK_PACKAGE_CONTACT "http://valentinecoin.org")
 set(CPACK_STRIP_FILES ON)
 if (APPLE)
     set(CPACK_GENERATOR DragNDrop)
@@ -280,9 +280,9 @@ elseif (UNIX)
 
     install(PROGRAMS build/${PROJECT_NAME} DESTINATION bin
     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
-    install(FILES src/brazukcoinwallet.desktop DESTINATION share/applications)
-    install(FILES src/images/logo-brazukcoin.png DESTINATION share/pixmaps RENAME brazukcoin.png)
-    install(FILES copyright DESTINATION share/doc/brazukcoinwallet)
+    install(FILES src/valentinecoinwallet.desktop DESTINATION share/applications)
+    install(FILES src/images/logo-valentinecoin.png DESTINATION share/pixmaps RENAME valentinecoin.png)
+    install(FILES copyright DESTINATION share/doc/valentinecoinwallet)
 
     if (NOT RPMBUILD)
         set(CPACK_GENERATOR DEB)
@@ -291,9 +291,9 @@ elseif (UNIX)
         set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${CPACK_PACKAGE_VENDOR} <krbcoin@ukr.net>")
         set(CPACK_DEBIAN_PACKAGE_SECTION Office)
         set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Brazukcoin BZK wallet
- Brazukcoin is Ukrainian decentralized, privacy oriented peer-to-peer
- cryptocurrency. It is open-source, nobody owns or controls Brazukcoin
+        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Valentinecoin BZK wallet
+ Valentinecoin is European decentralized, privacy oriented peer-to-peer
+ cryptocurrency. It is open-source, nobody owns or controls Valentinecoin
  and everyone can take part.")
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${VERSION_RELEASE}${CPACK_SYSTEM_NAME}")
     else()
@@ -303,10 +303,10 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSIO
         set(CPACK_RPM_PACKAGE_LICENSE "MIT")
         set(CPACK_RPM_PACKAGE_GROUP Office)
         set(CPACK_RPM_PACKAGE_REQUIRES "qt5-qtbase >= 5.3.2, qt5-qtbase-gui >= 5.3.2")
-        set(CPACK_RPM_PACKAGE_SUMMARY "Brazukcoin BZK wallet")
-        set(CPACK_RPM_PACKAGE_DESCRIPTION "Brazukcoin BZK wallet
- Brazukcoin is Ukrainian decentrilized, privacy oriented peer-to-peer
- cryptocurrency. It is open-source, nobody owns or controls Brazukcoin
+        set(CPACK_RPM_PACKAGE_SUMMARY "Valentinecoin VAL wallet")
+        set(CPACK_RPM_PACKAGE_DESCRIPTION "Valentinecoin VAL wallet
+ Valentinecoin is European decentrilized, privacy oriented peer-to-peer
+ cryptocurrency. It is open-source, nobody owns or controls Valentinecoin
  and everyone can take part.")
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${VERSION_RELEASE}${CPACK_SYSTEM_NAME}")
     endif ()
