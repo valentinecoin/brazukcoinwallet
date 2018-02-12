@@ -1,19 +1,19 @@
 **1. Clone wallet sources**
 
 ```
-git clone https://github.com/seredat/brazukcoinwallet.git
+git clone https://github.com/seredat/valentinecoinwallet.git
 ```
 
 **2. Set symbolic link to coin sources at the same level as `src`. For example:**
 
 ```
-ln -s ../brazukcoin cryptonote
+ln -s ../valentinecoin cryptonote
 ```
 
 Alternative way is to create git submodule:
 
 ```
-git submodule add https://github.com/seredat/brazukcoin.git cryptonote
+git submodule add https://github.com/seredat/valentinecoin.git cryptonote
 ```
 
 **3. Build**
