@@ -198,6 +198,7 @@ if (WIN32)
   set(BUILD_PLATFORM WIN32)
   set(BUILD_RESOURCES src/cryptonotewallet.rc)
   set(QTMAIN Qt5::WinMain)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj") 
 
 elseif (UNIX)
   set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} cryptonote/external/miniupnpc/minissdpc.c)
